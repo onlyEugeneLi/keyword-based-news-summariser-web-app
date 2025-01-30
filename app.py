@@ -31,9 +31,32 @@ agent_factory = (
 )
 
 # Start Workflow
-main_workflow.start(
-    agent_factory=agent_factory,
-    SETTINGS=SETTINGS,
-    root_path=root_path,
-    logger=logger,
+def start_workflow(topic):
+    SETTINGS.USE_CUSTOMIZE_OUTLINE = False
+    SETTINGS.CUSTOMIZE_OUTLINE = None
+    main_workflow.start(
+        agent_factory=agent_factory,
+        SETTINGS=SETTINGS,
+        root_path=root_path,
+        logger=logger,
+    )
+    return "Workflow started"
+
+iface = gr.Interface(
+    fn=start_workflow,
+    inputs=gr.inputs.Textbox(label="Topic"),
+    outputs="text",
+    title="Agently Daily News Collector"
 )
+
+
+if __name__ == "__main__":
+    iface.launch(server_name="0.0.0.0", server_port=5000)
+
+# To-do
+# 0. Fork original project
+# 1. Build docker container
+# 2. Deploy it in webserver
+# 3. Adjust the UI
+# 4. AWS Lambda deployment
+# (5. Pull request to contribute web deployment feature to original repository)
