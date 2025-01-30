@@ -2,7 +2,13 @@
 
 This project builds on the top of an open source application Agently Daily News Collector. 
 
-This app can take in a news topic from user and return a set of latest news feeds along with their summary. The timeframe can also be defined by user. 
+This app can take in a news topic from user and return a set of latest news feeds along with their summary. The timeframe can also be defined by user.
+
+## Minimum Working Demo 
+
+The below screenshot is a demo of the application's output when I asked for news on Ocado within a month.
+
+<center><img src='examples/ocado-news-feed.png' alt='demo' height='500' /></center>
 
 ## Background
 
