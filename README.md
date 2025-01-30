@@ -32,7 +32,21 @@ Gradio, a UI building python package, is used here to design the hosting website
 
 <center><img src='https://lh6.googleusercontent.com/H8mhf23JNy-zCPrLaNs_H4h6K1xLRHv-P0JS4_Ad86xSo7En4tLT3POuOJPrcBNXG5lWDy2Y6fdNzRrzoB9SSLxrHhwrdk-qO28__D19NzO01OkkyBdr7YzZo2K_46HidAoUpmxeW2FOF42uOtAg3Pnfe_gcWafYs7xYywgdFeRdK3kV-p7LfIY7Z9h9tg' alt='aws lambda' width='300' /></center>
 
-We use docker to containerise the app so it is ready for cloud deployment. 
+We use docker to containerise the app so it is ready for cloud deployment.
+
+Build and Run the Docker Container
+
+**Build the Docker image:**
+
+```
+docker build -t web-based-news-collector .
+```
+
+**Run the Docker container:**
+
+```
+docker run -p 5000:5000 web-based-news-collector
+```
 
 ## Cloud Deployment
 
