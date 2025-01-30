@@ -1,8 +1,50 @@
+# Experiment: Contatinerisation and Deployment
+
+This project builds on the top of an open source application Agently Daily News Collector. 
+
+This app can take in a news topic from user and return a set of latest news feeds along with their summary. The timeframe can also be defined by user. 
+
+## Background
+
+<center><img src='https://media.licdn.com/dms/image/v2/C4D12AQEGGLh9vdq_DA/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1628559787833?e=2147483647&v=beta&t=uJ-wc5keaOVxlRnTzNLFUW2DbAIUdNgfRHufoohopUM' alt='aws lambda' width='700' /></center>
+
+I spend 2-3 hours to catch up news on Bloomberg TV everyday. I always wonder if there is a tool that summarises all the news stories in a single file, so that I can catch up to the latest global events in 30 minutes. 
+
+After sharing this thought with friends and colleagues, many of them resonate with this idea. However, we could't find an app that meets all of our requirements. 
+
+I have listed these needs as objectives of this project.
+
+## Project Objectives
+
+1. User can use the application through a user-friendly UI. Anyone without programming knowledge can easily use the app. 
+1. User can access the application through internet without downloading it to their devices. 
+1. User can follow up a customised topic. 
+1. User can define a timeframe for the applicaiton to source and summarise news from. 
+1. User can access links to original articles of each news summary.
+
+## Web Interface
+
+Gradio, a UI building python package, is used here to design the hosting website. 
+
+<center><img src='https://miro.medium.com/v2/resize:fit:1200/1*ObP6EAuLPdtsRjBY_woFwA.png' alt='aws lambda' width='500' /></center>
+
+## Containerisation
+
+<center><img src='https://lh6.googleusercontent.com/H8mhf23JNy-zCPrLaNs_H4h6K1xLRHv-P0JS4_Ad86xSo7En4tLT3POuOJPrcBNXG5lWDy2Y6fdNzRrzoB9SSLxrHhwrdk-qO28__D19NzO01OkkyBdr7YzZo2K_46HidAoUpmxeW2FOF42uOtAg3Pnfe_gcWafYs7xYywgdFeRdK3kV-p7LfIY7Z9h9tg' alt='aws lambda' width='300' /></center>
+
+We use docker to containerise the app so it is ready for cloud deployment. 
+
+## Cloud Deployment
+
+<center><img src='https://media.licdn.com/dms/image/v2/C4D12AQHdqxi9NzTw9A/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1633435835489?e=2147483647&v=beta&t=yer3Jjaf3O_sUn_MXUqrcISiN1ZtfDCeCSnYemzOf60' alt='aws lambda' width='300' /></center>
+
+We use AWS Lambda, a serverless service, to host the application's docker container so that everyone can access it through internet. 
+
+
+
 <div style="text-align:center">
 
-<h1>Agently-Daily-News-Collector</h1>
-
-<b>English | <a href = "./README_CN.md">中文说明</a></b>
+<h1>Original application: Agently-Daily-News-Collector</h1>
 
 </div>
 
@@ -27,7 +69,7 @@ News collection file examples:
 Run this command in shell:
 
 ```shell
-git clone git@github.com:AgentEra/Agently-Daily-News-Collector.git
+git clone https://github.com/onlyEugeneLi/keyword-based-news-summariser-web-app.git
 ```
 
 ### Step 2: Edit settings YAML file
